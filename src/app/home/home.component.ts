@@ -32,9 +32,18 @@ export class HomeComponent implements OnInit {
     this.itemCount = this.goals.length
   }
 
+  updateCount() {
+    this.itemCount = this.goals.length
+  }
+
   addItem() {
     this.goals.push(this.goalText)
     this.goalText = ''
-    this.itemCount = this.goals.length
+    this.updateCount()
+  }
+
+  removeItem(i) {
+    this.goals.splice(i, 1)
+    this.updateCount()
   }
 }
